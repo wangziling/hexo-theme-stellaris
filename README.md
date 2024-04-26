@@ -30,7 +30,7 @@ hexo-theme-stellaris 分叉自 [hexo-theme-stellar](https://github.com/xaoxuu/he
 - 将主题安装为子模块
   
     ```bash
-    git submodule add https://github.com/chiyuki0325/hexo-theme-stellaris.git themes/stellaris
+    git submodule add https://github.com/wangziling/hexo-theme-stellaris.git themes/stellaris
     ```
 
 <!--
