@@ -1,3 +1,6 @@
+> Fork 自 [chiyuki0325/hexo-theme-stellaris](https://github.com/chiyuki0325/hexo-theme-stellaris)。
+> 支持 hexo-v7.x。
+
 # 📑 Stellaris - 强大、优雅、现代的 Hexo 主题
 
 hexo-theme-stellaris 分叉自 [hexo-theme-stellar](https://github.com/xaoxuu/hexo-theme-stellar)，基于[hexo-renderer-jsx](https://github.com/hexojs/hexo-renderer-jsx)，支持丰富的标签和动态数据组件。
@@ -6,7 +9,7 @@ hexo-theme-stellaris 分叉自 [hexo-theme-stellar](https://github.com/xaoxuu/he
 
 - 环境需求
     ```
-    Hexo: 5.4.0 ~ 6.3.0
+    Hexo: 7.0.0 ~ latest
     hexo-cli: 4.3.0 ~ latest
     node.js: 14.17.3 ~ 18.12.0
     npm: 6.14.13 ~ 8.19.2
