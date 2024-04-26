@@ -45,3 +45,4 @@ hexo.extend.tag.register('bvideo', require('./lib/bvideo')(hexo))
 hexo.extend.tag.register('bilicard', require('./lib/bvideo')(hexo))  // 兼容语法
 hexo.extend.tag.register('icon', require('./lib/icon')(hexo))
 hexo.extend.tag.register('video', require('./lib/video')(hexo))
+hexo.extend.tag.register('audio', require('./lib/audio')(hexo))
