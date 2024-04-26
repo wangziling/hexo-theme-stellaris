@@ -11,15 +11,15 @@ hexo-theme-stellaris 分叉自 [hexo-theme-stellar](https://github.com/xaoxuu/he
     ```
     Hexo: 7.0.0 ~ latest
     hexo-cli: 4.3.0 ~ latest
-    node.js: 14.17.3 ~ 18.12.0
-    npm: 6.14.13 ~ 8.19.2
+    node.js: 14.17.3 ~ latest
+    npm: 6.14.13 ~ latest
     ```
 
 #### 使用 Git 安装
 
 - 安装依赖
     ```bash
-    npm install react react-dom hexo-renderer-jsx html-react-parser --save
+    npm install react react-dom hexo-renderer-jsx html-react-parser @babel/plugin-transform-react-jsx moize moment --save
     ```
     
     ```bash
@@ -33,12 +33,13 @@ hexo-theme-stellaris 分叉自 [hexo-theme-stellar](https://github.com/xaoxuu/he
     git submodule add https://github.com/chiyuki0325/hexo-theme-stellaris.git themes/stellaris
     ```
 
-#### 使用 npm 安装
+<!--
+### 使用 npm 安装
 
 ```bash
 npm install hexo-theme-stellaris --save
 ```
-
+-->
 
 安装好后，在 `config.yml` 中添加 `theme: stellaris`。
 
@@ -48,10 +49,12 @@ npm install hexo-theme-stellaris --save
 ```bash
 git submodule update --remote --merge
 ```
+<!--
 #### 使用 npm
 ```bash
 npm update hexo-theme-stellaris
 ```
+-->
 
 ### 文档
 
