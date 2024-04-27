@@ -221,7 +221,6 @@ const stellaris = {
   },
   loadAllPlugins: () => {
     [
-      "scrollReveal",
       "lazyLoad",
       "fancyBox",
       "swiper",
@@ -541,8 +540,16 @@ const stellaris = {
     stellaris.initPageComponents();
     stellaris.initPlugins();
   },
+  initInstantly: () => {
+    InstantClick.on("change", stellaris.initOnPageChange);
+    [
+      "scrollReveal",
+    ].forEach((plugin) => {
+      stellaris.load[plugin]();
+    });
+  }
 };
 
 window.addEventListener("load", stellaris.loadAllPlugins, false);
 window.addEventListener("load", stellaris.initOnFirstLoad, false);
-InstantClick.on("change", stellaris.initOnPageChange);
+stellaris.initInstantly();
