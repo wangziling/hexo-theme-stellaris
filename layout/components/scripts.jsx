@@ -185,12 +185,35 @@ const InjectScripts = props => {
 const Scripts = props => {
     const {join} = require("path")
     const {theme, page, url_for} = props
+
+    function handleScriptLoaded(type, options) {
+      switch (type) {
+        case 'instant_click': {
+          InstantClick.init();
+
+          break;
+        }
+      }
+    }
+
     return (
         <div className="scripts">
-            <script src={theme.plugins.instant_click.js} data-no-instant="true"/>
-            <script data-no-instant="true" type="text/javascript">
-                {"InstantClick.init();"}
-            </script>
+            <script
+              src={theme.plugins.instant_click.js}
+              data-no-instant="true"
+              onLoad={() => handleScriptLoaded('instant_click')}
+            />
+            {(() => {
+              if (theme.plugins.scrollreveal && theme.plugins.scrollreveal.enabled) {
+                return (
+                  <script
+                    src={theme.plugins.scrollreveal.js} 
+                    type="text/javascript"
+                    onLoad={() => handleScriptLoaded('scrollreveal', theme.plugins.scrollreveal)}
+                  />
+                );
+              }
+            })()}
             <script type="text/javascript" dangerouslySetInnerHTML={{__html: generateStellarScript(props)}}/>
             <ImportJS {...props}/>
             <script type="text/javascript" src={join(url_for(), "/js/check_outdated_browser.js")} data-no-instant="true"/>
