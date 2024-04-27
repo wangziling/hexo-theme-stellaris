@@ -541,12 +541,12 @@ const stellaris = {
     stellaris.initPlugins();
   },
   initInstantly: () => {
-    InstantClick.on("change", stellaris.initOnPageChange);
     [
       "scrollReveal",
     ].forEach((plugin) => {
       stellaris.load[plugin]();
     });
+    InstantClick.on("change", stellaris.initOnPageChange);
   }
 };
 
