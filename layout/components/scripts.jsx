@@ -193,11 +193,6 @@ const Scripts = props => {
 
           break;
         }
-        case 'scrollreveal': {
-          // No need to init.
-          // 'Cause the `main.js` will do this job.
-          break;
-        }
       }
     }
 
