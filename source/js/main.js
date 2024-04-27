@@ -520,13 +520,6 @@ const stellaris = {
       stellaris.init[plugin]();
     });
   },
-  initDOMContentLoadedPlugins: () => {
-    [
-      "scrollReveal",
-    ].forEach((plugin) => {
-      stellaris.init[plugin]();
-    });
-  },
   initOnFirstLoad: () => {
     console.log(`New page loaded: ${window.location.pathname}`);
     stellaris.loadNeededPlugins();
@@ -539,13 +532,19 @@ const stellaris = {
     stellaris.initPageComponents();
     stellaris.initPlugins();
   },
-  initOnPageDOMContentLoaded: () => {
+  initInstantly: () => {
     // Init the `scroll_reveal` quickly.
-    stellaris.initDOMContentLoadedPlugins();
+    [
+      "scrollReveal",
+    ].forEach((plugin) => {
+      stellaris.init[plugin]();
+    });
+
+    InstantClick.on("change", stellaris.initOnPageChange);
   }
 };
 
 window.addEventListener("load", stellaris.loadAllPlugins, false);
 window.addEventListener("load", stellaris.initOnFirstLoad, false);
-document.addEventListener("DOMContentLoaded", stellaris.initOnPageDOMContentLoaded, false);
-InstantClick.on("change", stellaris.initOnPageChange);
+// Instant events.
+stellaris.initInstantly();
