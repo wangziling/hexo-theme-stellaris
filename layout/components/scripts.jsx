@@ -46,11 +46,6 @@ const generateStellarScript = props => {
       }
     }
 
-    let lazyCss = []
-    if (theme.style.lazy_css) {
-      lazyCss = lazyCss.concat(theme.style.lazy_css);
-    }
-
     return `
       stellar = {
         root: '${url_for()}',
@@ -155,8 +150,6 @@ const generateStellarScript = props => {
       stellar.article = {
         outdate_month: ${outdateMonth}
       };
-
-      stellar.lazyCss = ${JSON.stringify(lazyCss)}
     `;
 }
 
