@@ -191,6 +191,14 @@ const Scripts = props => {
             <script data-no-instant="true" type="text/javascript">
                 {"InstantClick.init();"}
             </script>
+            {(()=> {
+              if (theme.plugins.scrollreveal && theme.plugins.scrollreveal.enabled) {
+                return <>
+                  <script src={theme.plugins.scrollreveal.js} data-no-instant="true"/>
+                  <script data-no-instant="true" type="text/javascript">{"ScrollReveal();"}</script>
+                </>;
+              }
+            })()}
             <script type="text/javascript" dangerouslySetInnerHTML={{__html: generateStellarScript(props)}}/>
             <ImportJS {...props}/>
             <script type="text/javascript" src={join(url_for(), "/js/check_outdated_browser.js")} data-no-instant="true"/>

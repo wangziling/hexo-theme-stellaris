@@ -454,17 +454,14 @@ const stellaris = {
           });
         });
 
-        const { distance, duration, interval, scale } =
-          stellar.plugins.scrollreveal;
-        setTimeout(() => {
-          sr.reveal(selector, {
-            distance,
-            duration,
-            interval,
-            scale,
-            easing: "ease-out",
-          });
-        }, 50);
+        const { distance, duration, interval, scale } = stellar.plugins.scrollreveal;
+        sr.reveal(selector, {
+          distance,
+          duration,
+          interval,
+          scale,
+          easing: "ease-out",
+        });
       }
     },
     lazyLoad: () => {
@@ -544,12 +541,12 @@ const stellaris = {
     [
       "scrollReveal",
     ].forEach((plugin) => {
-      stellaris.load[plugin]();
+      stellaris.init[plugin]();
     });
     InstantClick.on("change", stellaris.initOnPageChange);
   }
 };
 
+stellaris.initInstantly();
 window.addEventListener("load", stellaris.loadAllPlugins, false);
 window.addEventListener("load", stellaris.initOnFirstLoad, false);
-stellaris.initInstantly();
