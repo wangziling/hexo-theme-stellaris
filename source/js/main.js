@@ -546,6 +546,9 @@ const stellaris = {
     ].forEach((plugin) => {
       stellaris.load[plugin]();
     });
+    stellar.lazyCss.forEach(function (css) {
+      stellar.loadCSS(css);
+    });
     InstantClick.on("change", stellaris.initOnPageChange);
   }
 };
