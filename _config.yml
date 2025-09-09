@@ -390,8 +390,8 @@ plugins:
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
     enabled: true  # [hexo clean && hexo s] is required after changing this value.
-    # js: https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js
-    js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.min.js
+    js: https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js
+    # js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.min.js
     transition: blur # blur, fade
 
   # 页面滚动动画
